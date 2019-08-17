@@ -1,7 +1,9 @@
 package ${kotlinEscapedPackageName}
 
-class ${dataSourceRepositoryName}(remote: ${remoteDataSourceName} = ${remoteDataSourceName}(), 
-                                    local: ${localDataSourceName} = ${localDataSourceName}())
+class ${dataSourceRepositoryName}(
+    private val remote: ${remoteDataSourceName} = ${remoteDataSourceName}(), 
+    private val local: ${localDataSourceName} = ${localDataSourceName}()
+)
 
 class ${remoteDataSourceName}
 

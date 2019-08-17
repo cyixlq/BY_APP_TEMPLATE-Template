@@ -10,7 +10,9 @@ import ${applicationPackage}.R
 
 class ${className} : BaseFragment() {
 
-    private val mViewModel = ViewModelProviders.of(this, ${viewModelClass}Factory(${dataSourceRepositoryName}())).get(${viewModelClass}::class.java)
+    private val mViewModel by lazy {
+        ViewModelProviders.of(this, ${viewModelClass}Factory(${dataSourceRepositoryName}())).get(${viewModelClass}::class.java)
+    }
 
     override val layoutId: Int = R.layout.${fragment_layout}
 

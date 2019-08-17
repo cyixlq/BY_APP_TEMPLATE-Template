@@ -11,7 +11,9 @@ import top.cyixlq.common.base.activity.BaseActivity
 
 class ${className} : BaseActivity() {
 
-    private val mViewModel = ViewModelProviders.of(this, ${viewModelClass}Factory(${dataSourceRepositoryName}())).get(${viewModelClass}::class.java)
+    private val mViewModel by lazy {
+        ViewModelProviders.of(this, ${viewModelClass}Factory(${dataSourceRepositoryName}())).get(${viewModelClass}::class.java)
+    }
 
     override val layoutId: Int = R.layout.${activity_layout}
 
