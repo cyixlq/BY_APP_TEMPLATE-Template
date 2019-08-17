@@ -1,4 +1,4 @@
-# BY_APP_Template-Template
+# BY_APP_TEMPLATE-Template
 
 [BY_APP_TEMPLATE](https://github.com/cyixlq/BY_APP_TEMPLATE)代码模板，一键生成所有kt模板代码，节省键盘寿命。争取早点完工早点下班！
 
