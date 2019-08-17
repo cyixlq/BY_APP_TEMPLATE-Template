@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<template name="Basic Activity for BY-APP" description="Creates a new Activity of BY-APP." format="5"
+	minApi="16" minBuildApi="8" revision="3">
+
+	<category value="Activity" />
+
+	<parameter name="Package name" constraints="package" default="com.mycompany.myapp" id="packageName"
+		type="string" />
+
+	<parameter name="Module Name" constraints="nonempty" default="Main" help="Other examples are 'Person', 'Book', etc."
+		id="objectKind" type="string" />
+
+	<parameter name="Activity class name" constraints="nonempty|class|unique" default="ItemActivity"
+		id="className" suggest="${extractLetters(objectKind)}Activity"
+		type="string" />
+
+	<parameter name="layout file name" constraints="layout|nonempty|unique" default="activity_my"
+		id="activity_layout" suggest="${activityToLayout(className)}" type="string" />
+
+	<parameter name="ViewModel class name" constraints="nonempty|class|unique" default="MyViewModel"
+		id="viewModelClass" suggest="${extractLetters(objectKind)}ViewModel"
+		type="string" visibility="true" />
+
+	<!-- <parameter name="Kodein module name" constraints="nonempty|class|unique" default="myKodeinModule"
+		id="kodeinModuleName" suggest="${extractLetters(objectKind?lower_case)}KodeinModule"
+		type="string" visibility="generateKodeinModule" /> -->
+
+	<!-- <parameter name="Generate DI module of Kodein" default="true" help="If true, KodeinModule file will be generated"
+		id="generateKodeinModule" type="boolean" /> -->
+
+	<!-- <parameter name="DataBinding class name" constraints="nonempty|class|unique" default="MyActivityBinding"
+		id="activityBindingClass" suggest="Activity${extractLetters(objectKind)}Binding"
+		type="string" visibility="false" />
+
+	<parameter name="Kodein module name" constraints="nonempty|class|unique" default="MyDataSource"
+		id="dataSourceName" suggest="${extractLetters(objectKind?lower_case)}DataSource"
+		type="string" visibility="false" /> -->
+
+	<parameter name="DataSourceRepository class name" constraints="nonempty|class|unique" default="MyDataSourceRepository"
+		id="dataSourceRepositoryName" suggest="${extractLetters(objectKind)}DataSourceRepository"
+		type="string" visibility="false" />
+
+	<parameter name="RemoteDataSource class name" constraints="nonempty|class|unique" default="MyRemoteDataSource"
+		id="remoteDataSourceName" suggest="${extractLetters(objectKind)}RemoteDataSource"
+		type="string" visibility="false" />
+
+	<parameter name="LocalDataSource class name" constraints="nonempty|class|unique" default="MyLocalDataSource"
+		id="localDataSourceName" suggest="${extractLetters(objectKind)}LocalDataSource"
+		type="string" visibility="false" />
+
+	<parameter name="Generate DataSource" default="true" 
+		help="If true, DataSource file will be generated" id="generateDataSource" type="boolean" />
+
+	<parameter name="Generate ViewState" default="true"
+		help="If true, ViewState file will be generated" id="generateViewState" type="boolean" />
+
+	<parameter name="ViewState class name" constraints="nonempty|class|unique" default="MyViewState"
+		id="viewStateName" suggest="${extractLetters(objectKind)}ViewState"
+		type="string" visibility="false" />
+	<!-- 128x128 thumbnails relative to template.xml -->
+	<thumbs>
+		<!-- default thumbnail is required -->
+		<thumb>templates_activity.png</thumb>
+	</thumbs>
+
+
+	<globals file="globals.xml.ftl" />
+	<execute file="recipe.xml.ftl" />
+
+</template>
