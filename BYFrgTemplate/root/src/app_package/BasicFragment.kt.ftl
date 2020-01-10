@@ -4,11 +4,11 @@ import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.ViewModelProviders
 <#if applicationPackage??>
-import top.cyixlq.common.base.fragment.BaseFragment
+import top.cyixlq.core.common.activity.CommonFragment
 import ${applicationPackage}.R
 </#if>
 
-class ${className} : BaseFragment() {
+class ${className} : CommonFragment() {
 
     private val mViewModel by lazy {
         ViewModelProviders.of(this, ${viewModelClass}Factory(${dataSourceRepositoryName}())).get(${viewModelClass}::class.java)

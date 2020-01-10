@@ -2,10 +2,9 @@ package ${kotlinEscapedPackageName}
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import top.cyixlq.common.base.viewmodel.BaseViewModel
+import top.cyixlq.core.common.viewmodel.CommonViewModel
 
-@SuppressWarnings("checkResult")
-class ${viewModelClass}(private val repo: ${dataSourceRepositoryName}) : BaseViewModel()
+class ${viewModelClass}(private val repo: ${dataSourceRepositoryName}) : CommonViewModel()
 
 @Suppress("UNCHECKED_CAST")
 class ${viewModelClass}Factory(private val repo: ${dataSourceRepositoryName}) : ViewModelProvider.Factory {

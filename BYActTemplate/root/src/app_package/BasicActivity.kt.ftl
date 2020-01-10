@@ -6,10 +6,10 @@ import android.content.Intent
 import androidx.lifecycle.ViewModelProviders
 <#if applicationPackage??>
 import ${applicationPackage}.R
-import top.cyixlq.common.base.activity.BaseActivity
+import top.cyixlq.core.common.activity.CommonActivity
 </#if>
 
-class ${className} : BaseActivity() {
+class ${className} : CommonActivity() {
 
     private val mViewModel by lazy {
         ViewModelProviders.of(this, ${viewModelClass}Factory(${dataSourceRepositoryName}())).get(${viewModelClass}::class.java)
