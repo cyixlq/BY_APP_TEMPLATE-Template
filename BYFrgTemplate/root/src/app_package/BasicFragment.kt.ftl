@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.ViewModelProviders
 <#if applicationPackage??>
-import top.cyixlq.core.common.activity.CommonFragment
+import top.cyixlq.core.common.fragment.CommonFragment
 import ${applicationPackage}.R
 </#if>
 
